@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<title>OTT Platform</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#0b0b0b;
+    color:white;
+    font-family:Arial,sans-serif;
+}
+
+header{
+    background:#111;
+    color:#e50914;
+    text-align:center;
+    padding:20px;
+    font-size:38px;
+    font-weight:bold;
+    box-shadow:0 2px 10px rgba(0,0,0,0.5);
+}
+
+.hero{
+    text-align:center;
+    padding:40px 20px;
+}
+
+.hero h1{
+    font-size:48px;
+    margin-bottom:10px;
+}
+
+.hero p{
+    color:#cccccc;
+    font-size:18px;
+}
+
+.container{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+    padding:30px;
+    max-width:1400px;
+    margin:auto;
+}
+
+.card{
+    background:#1a1a1a;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 0 15px rgba(255,255,255,0.12);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card img{
+    width:100%;
+    height:420px;
+    object-fit:cover;
+}
+
+.card h3{
+    text-align:center;
+    padding:15px;
+    font-size:22px;
+}
+
+.card button{
+    width:90%;
+    margin:10px auto 20px;
+    display:block;
+    padding:12px;
+    border:none;
+    border-radius:8px;
+    background:#e50914;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.card button:hover{
+    background:#ff1f2d;
+}
+
+video{
+    width:100%;
+    display:none;
+}
+
+footer{
+    text-align:center;
+    padding:25px;
+    background:#111;
+    margin-top:30px;
+    color:#aaa;
+}
+
+@media(max-width:900px){
+.container{
+grid-template-columns:repeat(2,1fr);
+}
+}
+
+@media(max-width:600px){
+.container{
+grid-template-columns:1fr;
+}
+}
+
+</style>
+
+<script>
+
+function playVideo(id){
+
+let video=document.getElementById(id);
+
+video.style.display="block";
+
+video.scrollIntoView({behavior:"smooth"});
+
+video.play();
+
+}
+
+</script>
+
+</head>
+
+<body>
+
+<header>
+🎬 ZK OTT
+</header>
+
+<div class="hero">
+<h1>Latest Bollywood Trailers</h1>
+<p>Watch upcoming movie trailers hosted on AWS S3 & EC2</p>
+</div>
+
+<div class="container">
+
+<!-- KING -->
+
+<div class="card">
+
+<img src="https://ott-platfrom-zishu.s3.ap-south-1.amazonaws.com/KING.jpg">
+
+<h3>KING</h3>
+
+<video controls id="v1">
+
+<source src="https://ott-platfrom-zishu.s3.ap-south-1.amazonaws.com/KING+_+Title+Reveal+_+Shah+Rukh+Khan+_+Siddharth+Anand+_+It%E2%80%99s+Showtime+_+2026.mp4" type="video/mp4">
+
+</video>
+
+<button onclick="playVideo('v1')">
+▶ Play Trailer
+</button>
+
+</div>
+
+<!-- DHURANDHAR -->
+
+<div class="card">
+
+<img src="https://ott-platfrom-zishu.s3.ap-south-1.amazonaws.com/dhurandar.jfif">
+
+<h3>Dhurandhar</h3>
+
+<video controls id="v2">
+
+<source src="https://ott-platfrom-zishu.s3.ap-south-1.amazonaws.com/Dhurandhar+First+Look+_+Ranveer+Singh+_+Aditya+Dhar+_+Ruling+Cinemas+Worldwide.mp4" type="video/mp4">
+
+</video>
+
+<button onclick="playVideo('v2')">
+▶ Play Trailer
+</button>
+
+</div>
+
+<!-- IKKIS -->
+
+<div class="card">
+
+<img src="https://ott-platfrom-zishu.s3.ap-south-1.amazonaws.com/ikkis.jfif">
+
+<h3>Ikkis</h3>
+
+<video controls id="v3">
+
+<source src="https://ott-platfrom-zishu.s3.ap-south-1.amazonaws.com/ikkis.mp4" type="video/mp4">
+
+</video>
+
+<button onclick="playVideo('v3')">
+▶ Play Trailer
+</button>
+
+</div>
+
+<!-- MAARRICH -->
+
+<div class="card">
+
+<img src="https://ott-platfrom-zishu.s3.ap-south-1.amazonaws.com/maarrich.avif">
+
+<h3>Maarrich</h3>
+
+<video controls id="v4">
+
+<source src="https://ott-platfrom-zishu.s3.ap-south-1.amazonaws.com/maarrich.mp4" type="video/mp4">
+
+</video>
+
+<button onclick="playVideo('v4')">
+▶ Play Trailer
+</button>
+
+</div>
+
+<!-- SINGHAM AGAIN -->
+
+<div class="card">
+
+<img src="https://ott-platfrom-zishu.s3.ap-south-1.amazonaws.com/singham.avif">
+
+<h3>Singham Again</h3>
+
+<video controls id="v5">
+
+<source src="https://ott-platfrom-zishu.s3.ap-south-1.amazonaws.com/singham_again.mp4" type="video/mp4">
+
+</video>
+
+<button onclick="playVideo('v5')">
+▶ Play Trailer
+</button>
+
+</div>
+
+</div>
+
+<footer>
+
+© 2026 ZK OTT Platform | Hosted on AWS EC2 & Amazon S3
+
+</footer>
+
+</body>
+</html>
